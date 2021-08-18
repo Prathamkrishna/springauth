@@ -2,6 +2,7 @@ package com.example.authentication.controllers;
 
 import com.example.authentication.api.destructuredata;
 import com.example.authentication.api.address;
+import com.example.authentication.api.changeage;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -28,5 +29,12 @@ public class createuser {
     @GetMapping("/user/address")
     public static String getUserAddress(){
         return new address().getStreet();
+    }
+    @PostMapping("/user/changeage")
+    public static String changeUserPassword(@RequestBody int newAge){
+        new changeage().setAge(newAge);
+        System.out.println(new changeage().getAge());
+//        System.out.println(newAge);
+        return "Password Changed";
     }
 }

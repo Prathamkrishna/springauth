@@ -2,10 +2,18 @@ package com.example.authentication.api;
 
 import com.example.authentication.api.address;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "userdataa")
 public class destructuredata {
-    private String name;
-    private int age;
-    private address userAddress;
+    @Id
+    private long id;
+    @Column(name = "name")
+    static private String name;
+    static private int age;
+    @Column(name = "address")
+    static private address userAddress;
 
     public address getUserAddress() {
         return userAddress;
