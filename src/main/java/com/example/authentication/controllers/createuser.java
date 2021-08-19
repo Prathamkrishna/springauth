@@ -34,7 +34,6 @@ public class createuser {
     public static String changeUserPassword(@RequestBody int newAge){
         new changeage().setAge(newAge);
         System.out.println(new changeage().getAge());
-//        System.out.println(newAge);
         return "Password Changed";
     }
 }
